@@ -37,6 +37,16 @@ private Nodo der;
     public void setNodoIzquierdo(Nodo nodo){
     izq = nodo;
     }
-   
-
+ 
+    /**
+     * Metodo ingresoProyectado: Este metodo regresa el total
+     * proyectado de las ganancias segun el numero de casas (c) que se 
+     * estima contrataran el servicio.
+     * @param c
+     * @return 
+     */
+    public int ingresoProyectado (int c){
+        int respuesta = c * 150;
+        return respuesta;
+    }    
 }

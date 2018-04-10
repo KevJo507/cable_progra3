@@ -9,10 +9,8 @@ package Modelo;
  *
  * @author mcajas
  */
-public class Main {
-     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Arbol {
+     
     
  private static void llenarArbol(){
 
@@ -53,13 +51,13 @@ F.setNodoDerecho(M);
 G.setNodoIzquierdo(N);
 G.setNodoDerecho(O);
 
-//Resultado en pantalla
-System.out.println("\nRecorrido Preorden: ");
-preOrden(A);
-System.out.println("\nRecorrido Inorden: ");
-inorden(A);
-System.out.println("\nRecorrido PostOrden: ");
-posOrden(A);
+////Resultado en pantalla
+//System.out.println("\nRecorrido Preorden: ");
+//preOrden(A);
+//System.out.println("\nRecorrido Inorden: ");
+//inorden(A);
+//System.out.println("\nRecorrido PostOrden: ");
+//posOrden(A);
 }
 
 //Metodo Preorden

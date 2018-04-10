@@ -1,5 +1,6 @@
 package Vista;
 
+import Modelo.Arbol;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -8,12 +9,13 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class Principal extends javax.swing.JFrame {
 
+    Arbol arbol = new Arbol();
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
-
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
