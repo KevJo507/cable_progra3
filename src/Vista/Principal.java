@@ -97,7 +97,6 @@ public class Principal extends javax.swing.JFrame {
 
         DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) Arbol.getLastSelectedPathComponent();
         System.out.println(nodo.getUserObject());
-        System.out.println(nodo.getUserObject());
         
     }//GEN-LAST:event_ArbolValueChanged
 
