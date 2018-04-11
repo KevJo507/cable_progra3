@@ -1,11 +1,9 @@
 package Modelo;
 
 public class Nodo {
- 
-
-private int valor;
-private Nodo izq;
-private Nodo der;
+    private int valor;
+    private Nodo izq;
+    private Nodo der;
 
     public int getValor() {
         return valor;
@@ -15,28 +13,26 @@ private Nodo der;
         this.valor = Valor;
     }
 
-
 //Constructor
     public Nodo(int valor){
-    this.valor = valor;
+        this.valor = valor;
     }
 //Para saber el nodo izquierdo
     public Nodo getNodoIzquierdo(){
-    return izq;
+        return izq;
     }
 //Para saber el nodo derecho
     public Nodo getNodoDerecho(){
-    return der;
+        return der;
     }
 //Se crea nodo derecho
 
     public void setNodoDerecho(Nodo nodo){
-    der = nodo;
+        der = nodo;
     }
 //Se crea nodo Izquierdo
     public void setNodoIzquierdo(Nodo nodo){
-    izq = nodo;
+        izq = nodo;
     }
-   
-
+    
 }

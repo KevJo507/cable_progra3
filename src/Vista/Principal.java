@@ -1,5 +1,6 @@
 package Vista;
 
+import Modelo.Arbol;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -8,12 +9,17 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class Principal extends javax.swing.JFrame {
 
+    Arbol arbol = new Arbol();
     /**
      * Creates new form Principal
      */
     public Principal() {
+        
         initComponents();
-
+        arbol.llenarArbol();
+        this.setTitle("Cable");
+        this.setSize(600, 350);
+        this.setLocationRelativeTo(null);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,6 +32,9 @@ public class Principal extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Arbol = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        texto = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,21 +75,42 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Arbol);
 
+        texto.setText("Seleccione un Nodo para ver la incidencia.");
+        jScrollPane2.setViewportView(texto);
+
+        arbol.llenarArbol();
+        jLabel1.setText(arbol.getGanancia(arbol.A));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -94,10 +124,55 @@ public class Principal extends javax.swing.JFrame {
      * @param evt 
      */
     private void ArbolValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_ArbolValueChanged
-
         DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) Arbol.getLastSelectedPathComponent();
-        System.out.println(nodo.getUserObject());
-        
+
+        switch(nodo.toString()){
+            case "A" :
+                texto.setText(arbol.getPerdida(arbol.A)+arbol.getCasas(arbol.A));
+            break;
+            case "B" :
+                texto.setText(arbol.getPerdida(arbol.B)+arbol.getCasas(arbol.B));
+            break;
+            case "C" :
+                texto.setText(arbol.getPerdida(arbol.C)+arbol.getCasas(arbol.C));
+            break;
+            case "D" :
+                texto.setText(arbol.getPerdida(arbol.D)+arbol.getCasas(arbol.D));
+            break;
+            case "E" :
+                texto.setText(arbol.getPerdida(arbol.E)+arbol.getCasas(arbol.E));
+            break;
+            case "F" :
+                texto.setText(arbol.getPerdida(arbol.F)+arbol.getCasas(arbol.F));
+            break;
+            case "G" :
+                texto.setText(arbol.getPerdida(arbol.G)+arbol.getCasas(arbol.G));
+            break;
+            case "H" :
+                texto.setText(arbol.getPerdida(arbol.H)+arbol.getCasas(arbol.H));
+            break;
+            case "I" :
+                texto.setText(arbol.getPerdida(arbol.I)+arbol.getCasas(arbol.I));
+            break;
+            case "J" :
+                texto.setText(arbol.getPerdida(arbol.J)+arbol.getCasas(arbol.J));
+            break;
+            case "K" :
+                texto.setText(arbol.getPerdida(arbol.K)+arbol.getCasas(arbol.K));
+            break;
+            case "L" :
+                texto.setText(arbol.getPerdida(arbol.L)+arbol.getCasas(arbol.L));
+            break;
+            case "M" :
+                texto.setText(arbol.getPerdida(arbol.M)+arbol.getCasas(arbol.M));
+            break;
+            case "N" :
+                texto.setText(arbol.getPerdida(arbol.N)+arbol.getCasas(arbol.N));
+            break;
+            case "O" :
+                texto.setText(arbol.getPerdida(arbol.O)+arbol.getCasas(arbol.O));
+            break;
+        }
     }//GEN-LAST:event_ArbolValueChanged
 
     /**
@@ -137,6 +212,9 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTree Arbol;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane texto;
     // End of variables declaration//GEN-END:variables
 }
